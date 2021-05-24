@@ -42,7 +42,7 @@ export default {
           if (element.user_id == this.$store.state.user.id) {
             axios ({
               method: "delete",
-              url: "polar-fjord-85197.herokuapp.com/api/like",
+              url: "https://polar-fjord-85197.herokuapp.com/api/like",
               data: {
                 share_id: this.shares[index].item.id,
                 user_id: this.$store.state.user.id,
@@ -58,7 +58,7 @@ export default {
         });
       } else {
         axios
-        .post("polar-fjord-85197.herokuapp.com/api/like", {
+        .post("https://polar-fjord-85197.herokuapp.com/api/like", {
           share_id: this.shares[index].item.id,
           user_id: this.$store.state.user.id,
         })
@@ -74,7 +74,7 @@ export default {
     del(index) {
       axios
       .delete(
-        "polar-fjord-85197.herokuapp.com/api/shares/" +
+        "https://polar-fjord-85197.herokuapp.com/api/shares/" +
         this.shares[index].item.id
       )
       .then((response) => {
@@ -88,12 +88,12 @@ export default {
     async getShares() {
       let data = [];
       const shares = await axios.get(
-        "polar-fjord-85197.herokuapp.com/api/shares"
+        "https://polar-fjord-85197.herokuapp.com/api/shares"
       );
       for (let i = 0; i < shares.data.data.length; i++) {
         await axios
         .get(
-          "polar-fjord-85197.herokuapp.com/api/shares/" +
+          "https://polar-fjord-85197.herokuapp.com/api/shares/" +
           shares.data.data[i].id
         )
         .then((response) => {

@@ -38,7 +38,7 @@ export default {
     edit() {
       if (!this.active) {
         axios
-        .put("polar-fjord-85197.herokuapp.com/api/user", {
+        .put("https://polar-fjord-85197.herokuapp.com/api/user", {
           email: this.$store.state.user.email,
           profile: this.profile,
         })

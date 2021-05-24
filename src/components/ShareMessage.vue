@@ -22,7 +22,7 @@ export default {
         alert("シェアする内容を入力してください");
       } else {
         axios
-        .post("polar-fjord-85197.herokuapp.com/api/shares", {
+        .post("https://polar-fjord-85197.herokuapp.com/api/shares", {
           user_id: this.$route.state.user.id,
           share: this.share,
         })
